@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review & Refactor Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Automated Code Review & Refactoring Tool</h1>
+            <p>Analyze and improve the quality of your code in seconds!</p>
+        </div>
+
+
+        <div class="description">
+            <p>Click the button below to check your code. Paste your code into the provided text area, and we will help you analyze and refactor it for better performance and readability.</p>
+            <button id="checkCodeButton" onclick="showCodeInput()">Check Your Code</button>
+        </div>
+
+
+        <div id="codeSection" class="code-section" style="display: none;">
+            <textarea id="codeInput" placeholder="Enter your code here..." rows="10"></textarea>
+
+
+            <div class="buttons">
+                <button onclick="analyzeCode()">Analyze</button>
+                <button onclick="refactorCode()">Refactor</button>
+            </div>
+
+  
+            <h2>Review Issues:</h2>
+            <pre id="issuesOutput"></pre>
+
+
+            <h2>Refactored Code:</h2>
+            <pre id="refactoredOutput"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

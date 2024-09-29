@@ -1,0 +1,177 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#checkCodeButton {
+    background-color: #66a6ff;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#checkCodeButton:hover {
+    background-color: #89f7fe;
+    transform: scale(1.05);
+}
+
+#checkCodeButton:active {
+    transform: scale(0.95);
+}
+
+/* Code Section */
+.code-section {
+    display: none;
+    margin-top: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 1em;
+    color: #555;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    resize: none;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Courier New', Courier, monospace;
+    background: url('https://www.transparenttextures.com/patterns/notebook.png');
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #66a6ff;
+    box-shadow: 0 0 10px rgba(102, 166, 255, 0.5);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #66a6ff;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #89f7fe;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #444;
+    margin-top: 40px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #eee;
+    padding: 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    white-space: pre-wrap;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
