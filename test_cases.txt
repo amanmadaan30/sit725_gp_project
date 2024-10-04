@@ -1,3 +1,4 @@
+# nested if else check
 def long_method(a, b):
     if a > 10:
         if b < 5:
@@ -9,28 +10,18 @@ def long_method(a, b):
     z = y - 5
     return z
 
+#missing return type check
+def calculate_sum(x, y):
+    result = x + y
 
-public class Sample {
-public int addNumbers(int a, int b) {
-int sum = a+b;return sum;
-}
-}
+#long function names
+def this_is_a_very_long_function_name_that_exceeds_twenty_characters():
+    return "Too long"
 
-public class Calculator{
-public int multiply(int a, int b){if(a > 0){ return a*b;} else{return 0;}}
-}
+#remove unused imports
+import os
+import sys
 
-
-public class LoopExample {
-public void printNumbers() {
-for(int i=0;i<10;i++) {System.out.println(i);}}
-}
-
-
-public class MathOperations {
-public int subtract(int a,int b){return a-b;}
-public int divide(int a,int b){if(b!=0) return a/b;else return 0;}
-}
-
-
-public class Person {private String name;private int age;public Person(String name,int age){this.name=name;this.age=age;}public String getName(){return name;}public int getAge(){return age;}}
+def hello_world():
+    os.hello()
+    print("Hello, World!")

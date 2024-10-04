@@ -1,0 +1,30 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review & Refactor Tool</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Code Review & Refactoring Tool</h1>
+        
+        <textarea id="codeInput" placeholder="Enter your code here..." rows="10"></textarea>
+        
+        <div class="buttons">
+            <button onclick="analyzeCode()">Analyze</button>
+            <button onclick="refactorCode()">Refactor</button>
+        </div>
+        
+        <h2>Review Issues:</h2>
+        <pre id="issuesOutput"></pre>
+        
+        <h2>Refactored Code:</h2>
+        <pre id="refactoredOutput"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
