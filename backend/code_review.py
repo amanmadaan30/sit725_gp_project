@@ -87,18 +87,6 @@ def analyze_java_code(code):
     if re.search(missing_return_pattern, code):
         issues.append("Some methods are missing return types.")
 
-<<<<<<< HEAD
-    # Check for unused variables
-    variable_pattern = r'(\w+)\s+(\w+);'
-    declared_vars = re.findall(variable_pattern, code)
-    used_vars = re.findall(r'\b(\w+)\b', code)
-    
-    for var_type, var_name in declared_vars:
-        if var_name not in used_vars:
-            issues.append(f"Variable '{var_name}' is declared but not used.")
-
-=======
->>>>>>> 5277a24 (add backend files)
     return issues
 
 def refactor_java_code(code):
@@ -111,29 +99,8 @@ def refactor_java_code(code):
     # Flatten nested if-else
     code = re.sub(r'if\s*\((.*)\)\s*\{\s*if\s*\((.*)\)\s*\{', r'if (\1 && \2) {', code)
     
-<<<<<<< HEAD
-    # Refactor long methods (example of splitting methods)
-    method_pattern = r'public\s+\w+\s+(\w+)\(.*\)\s*\{([\s\S]+?)\}'
-    code = re.sub(method_pattern, lambda m: split_long_java_method(m), code)
-
     return code
 
-    def split_long_java_method(match):
-        method_name = match.group(1)
-        method_body = match.group(2).strip().split('\n')
-    
-    if len(method_body) > 6:
-        new_method_name = f"{method_name}Part1"
-        helper_method = f'public void {new_method_name}() {{\n    ' + '\n    '.join(method_body[:3]) + '\n}\n'
-        new_body = f'{helper_method}\n    {new_method_name}();\n    ' + '\n    '.join(method_body[3:])
-        return f'public void {method_name}() {{\n    {new_body}\n}}'
-    
-    return match.group(0)
-
-=======
-    return code
-
->>>>>>> 5277a24 (add backend files)
 # JavaScript analysis
 def analyze_js_code(code):
     issues = []
@@ -153,19 +120,6 @@ def analyze_js_code(code):
     if re.search(nested_if_pattern, code):
         issues.append("Nested if-else blocks found.")
 
-<<<<<<< HEAD
-    # Check for unused variables
-    variable_pattern = r'let\s+(\w+)|const\s+(\w+)|var\s+(\w+)'
-    declared_vars = re.findall(variable_pattern, code)
-    declared_var_names = {var for group in declared_vars for var in group if var}  # Unique variable names
-    used_vars = re.findall(r'\b(\w+)\b', code)
-
-    for var in declared_var_names:
-        if var not in used_vars:
-            issues.append(f"Variable '{var}' is declared but not used.")
-
-=======
->>>>>>> 5277a24 (add backend files)
     return issues
 
 def refactor_js_code(code):
@@ -178,32 +132,8 @@ def refactor_js_code(code):
     # Flatten nested if-else
     code = re.sub(r'if\s*\((.*)\)\s*\{\s*if\s*\((.*)\)\s*\{', r'if (\1 && \2) {', code)
     
-<<<<<<< HEAD
-    # Convert functions to arrow functions (simple implementation)
-    code = re.sub(r'function\s+(\w+)\s*\((.*?)\)\s*{', r'const \1 = (\2) => {', code)
-
-    # Refactor long functions
-    function_pattern = r'function\s+(\w+)\s*\((.*?)\)\s*{([\s\S]+?)}'
-    code = re.sub(function_pattern, lambda m: split_long_js_function(m), code)
-
     return code
 
-def split_long_js_function(match):
-    func_name = match.group(1)
-    func_params = match.group(2)
-    func_body = match.group(3).strip().split('\n')
-    
-    if len(func_body) > 6:
-        new_func_name = f"{func_name}Part1"
-        helper_function = f'const {new_func_name} = ({func_params}) => {{\n    ' + '\n    '.join(func_body[:3]) + '\n}};\n'
-        new_body = f'{helper_function}\n    {new_func_name}();\n    ' + '\n    '.join(func_body[3:])
-        return f'const {func_name} = ({func_params}) => {{\n    {new_body}\n}};'
-    
-    return match.group(0)
-=======
-    return code
-
->>>>>>> 5277a24 (add backend files)
 # Utility functions for refactoring
 
 def convert_to_camel_case(name):

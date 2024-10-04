@@ -21,23 +21,6 @@ def refactor():
     code = data['code']
     language = data.get('language', 'python').lower()
     refactored_code = refactor_code(code, language)
-<<<<<<< HEAD
-    return jsonify({"refactored_code": refactored_code})
-
-@app.route('/analyze_java', methods=['POST'])
-def analyze_java():
-    data = request.get_json()
-    code = data['code']
-    issues = analyze_java_code(code)
-    return jsonify({"issues": issues})
-
-@app.route('/refactor_java', methods=['POST'])
-def refactor_java():
-    data = request.get_json()
-    code = data['code']
-    refactored_code = refactor_java_code(code)
-=======
->>>>>>> 5277a24 (add backend files)
     return jsonify({"refactored_code": refactored_code})
 
 if __name__ == '__main__':
