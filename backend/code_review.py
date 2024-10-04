@@ -87,6 +87,7 @@ def analyze_java_code(code):
     if re.search(missing_return_pattern, code):
         issues.append("Some methods are missing return types.")
 
+<<<<<<< HEAD
     # Check for unused variables
     variable_pattern = r'(\w+)\s+(\w+);'
     declared_vars = re.findall(variable_pattern, code)
@@ -96,6 +97,8 @@ def analyze_java_code(code):
         if var_name not in used_vars:
             issues.append(f"Variable '{var_name}' is declared but not used.")
 
+=======
+>>>>>>> 5277a24 (add backend files)
     return issues
 
 def refactor_java_code(code):
@@ -108,6 +111,7 @@ def refactor_java_code(code):
     # Flatten nested if-else
     code = re.sub(r'if\s*\((.*)\)\s*\{\s*if\s*\((.*)\)\s*\{', r'if (\1 && \2) {', code)
     
+<<<<<<< HEAD
     # Refactor long methods (example of splitting methods)
     method_pattern = r'public\s+\w+\s+(\w+)\(.*\)\s*\{([\s\S]+?)\}'
     code = re.sub(method_pattern, lambda m: split_long_java_method(m), code)
@@ -126,6 +130,10 @@ def refactor_java_code(code):
     
     return match.group(0)
 
+=======
+    return code
+
+>>>>>>> 5277a24 (add backend files)
 # JavaScript analysis
 def analyze_js_code(code):
     issues = []
@@ -145,6 +153,7 @@ def analyze_js_code(code):
     if re.search(nested_if_pattern, code):
         issues.append("Nested if-else blocks found.")
 
+<<<<<<< HEAD
     # Check for unused variables
     variable_pattern = r'let\s+(\w+)|const\s+(\w+)|var\s+(\w+)'
     declared_vars = re.findall(variable_pattern, code)
@@ -155,6 +164,8 @@ def analyze_js_code(code):
         if var not in used_vars:
             issues.append(f"Variable '{var}' is declared but not used.")
 
+=======
+>>>>>>> 5277a24 (add backend files)
     return issues
 
 def refactor_js_code(code):
@@ -167,6 +178,7 @@ def refactor_js_code(code):
     # Flatten nested if-else
     code = re.sub(r'if\s*\((.*)\)\s*\{\s*if\s*\((.*)\)\s*\{', r'if (\1 && \2) {', code)
     
+<<<<<<< HEAD
     # Convert functions to arrow functions (simple implementation)
     code = re.sub(r'function\s+(\w+)\s*\((.*?)\)\s*{', r'const \1 = (\2) => {', code)
 
@@ -188,6 +200,10 @@ def split_long_js_function(match):
         return f'const {func_name} = ({func_params}) => {{\n    {new_body}\n}};'
     
     return match.group(0)
+=======
+    return code
+
+>>>>>>> 5277a24 (add backend files)
 # Utility functions for refactoring
 
 def convert_to_camel_case(name):
